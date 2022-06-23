@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/drawable/bg_btn_accept.xml" value="0.175" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/drawable/bg_btn_add_admin.xml" value="0.175" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/drawable/bg_btn_edit.xml" value="0.175" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/drawable/bg_btn_edit_admin.xml" value="0.175" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/drawable/bg_btn_pending.xml" value="0.175" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/drawable/bg_btn_signin.xml" value="0.175" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/drawable/bg_btn_signup_user.xml" value="0.175" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/drawable/bg_edittext_signin.xml" value="0.175" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/drawable/bg_rv_admin.xml" value="0.175" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_add_data_admin.xml" value="0.2" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_akun_user.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_all_order_admin.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_checkout_user.xml" value="0.1" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_dashboard_admin.xml" value="0.15763888888888888" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_dashboard_user.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_detail_order_admin.xml" value="0.2" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_detail_user.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_edit_product.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_form_alamat.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_form_pembayaran.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_log_in_admin.xml" value="0.15763888888888888" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_my_cart_list_order.xml" value="0.1" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_sign_in.xml" value="0.152" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_sign_up_user.xml" value="0.2" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_splash.xml" value="0.16" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/activity_success.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/content_dashboard_admin.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_cart.xml" value="0.152" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_cart_user.xml" value="0.2" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_checkout_user.xml" value="0.2" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_form_alamat.xml" value="0.176" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_form_pembayaran.xml" value="0.2" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_form_success.xml" value="0.2" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_home.xml" value="0.176" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_home_user.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_profile.xml" value="0.15763888888888888" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_profile_user.xml" value="0.2" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_search.xml" value="0.15763888888888888" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/fragment_search_user.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/item_rv_admin.xml" value="0.2" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/item_rv_akun_user.xml" value="0.20526315789473684" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/item_rv_detail_order_admin.xml" value="0.2" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/item_rv_detail_pengiriman.xml" value="0.176" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/item_rv_list_order_admin.xml" value="0.176" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/item_rv_ringkasan_pembayaran.xml" value="0.176" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/item_rv_success.xml" value="0.4" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/layout/item_rv_user.xml" value="0.1493421052631579" />
+        <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/menu/bottom_nav_menu.xml" value="0.15763888888888888" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

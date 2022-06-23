@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/spacing_regular"
+    android:layout_marginTop="@dimen/spacing_regular"
+    android:background="@drawable/bg_rv_admin">
+
+    <ImageView
+        android:id="@+id/iv_produk_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_produk"
+        android:padding="@dimen/spacing_normal_quarter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/cd_image" />
+
+    <TextView
+        android:id="@+id/tv_name_produk_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monsemibold"
+        android:text="Aice Choco Melt"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:layout_marginStart="@dimen/spacing_normal_quarter"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_large"
+        app:layout_constraintStart_toEndOf="@+id/iv_produk_user"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_stok_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monmed"
+        android:layout_marginTop="@dimen/spacing_weeny"
+        android:text="Stock 4 pcs"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_small"
+        app:layout_constraintStart_toStartOf="@+id/tv_name_produk_user"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_produk_user" />
+
+    <TextView
+        android:id="@+id/tv_price_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monmed"
+        android:text="Rp. 4,000,-"
+        android:layout_marginTop="@dimen/spacing_weeny"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_small"
+        app:layout_constraintStart_toStartOf="@+id/tv_stok_user"
+        app:layout_constraintTop_toBottomOf="@+id/tv_stok_user" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

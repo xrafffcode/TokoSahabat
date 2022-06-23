@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.user.CheckoutUserFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/actionbar_cehckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_700"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back_checkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="@color/color_transparent"
+            android:padding="@dimen/spacing_normal_quarter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/cd_image_button"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_checkout"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_back_checkout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_checkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_giant"
+        android:fontFamily="@font/monreguler"
+        android:text="@string/text_checkout"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_large_med"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actionbar_cehckout" />
+
+    <TextView
+        android:id="@+id/tv_alamat_checkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/text_alamat"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_title_content"
+        app:layout_constraintStart_toStartOf="@+id/tv_checkout"
+        app:layout_constraintTop_toBottomOf="@+id/tv_checkout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_alamat_checkout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_huge"
+        android:background="@drawable/bg_rv_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_alamat_checkout"
+        app:layout_constraintTop_toBottomOf="@+id/tv_alamat_checkout">
+
+        <TextView
+            android:id="@+id/tv_name_checkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_deni"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_isi_alamat_checkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginBottom="@dimen/spacing_regular"
+            android:fontFamily="@font/monmed"
+            android:maxLines="3"
+            android:text="@string/text_isi_alamat"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_name_checkout"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_checkout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_pembayaran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/text_pembayaran"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_title_content"
+        app:layout_constraintStart_toStartOf="@+id/cl_alamat_checkout"
+        app:layout_constraintTop_toBottomOf="@+id/cl_alamat_checkout" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_cod"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_huge"
+        android:background="@drawable/bg_rv_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_pembayaran"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pembayaran">
+
+        <TextView
+            android:id="@+id/tv_cod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_large"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_cod"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_total_cod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginBottom="@dimen/spacing_regular"
+            android:fontFamily="@font/monmed"
+            android:text="@string/text_harga"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_cod"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cod" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_huge"
+        android:layout_marginEnd="@dimen/spacing_huge"
+        android:layout_marginBottom="@dimen/spacing_huge"
+        android:background="@drawable/bg_btn_signin"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/text_order"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

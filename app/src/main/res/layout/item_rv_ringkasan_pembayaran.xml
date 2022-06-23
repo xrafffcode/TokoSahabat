@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_regular"
+    android:layout_marginEnd="@dimen/spacing_regular"
+    android:background="@drawable/bg_rv_admin">
+
+
+    <TextView
+        android:id="@+id/tv_ringkasan_pembayaran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:fontFamily="@font/monsemibold"
+        android:text="Ringkasan Pembayaran"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_total_tagihan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:fontFamily="@font/monmed"
+        android:text="Total Tagihan"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_small"
+        app:layout_constraintStart_toStartOf="@+id/tv_ringkasan_pembayaran"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ringkasan_pembayaran" />
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/monmed"
+        android:text="Rp. 14,100,-"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_small"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_total_tagihan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_total_tagihan"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_biaya_layanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginBottom="@dimen/spacing_regular"
+        android:fontFamily="@font/monmed"
+        android:text="Biaya Layanan"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_total_tagihan"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total_tagihan" />
+
+    <TextView
+        android:id="@+id/tv_biaya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monmed"
+        android:text="Rp 2,000,-"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_small"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_biaya_layanan"
+        app:layout_constraintEnd_toEndOf="@+id/tv_total"
+        app:layout_constraintTop_toTopOf="@+id/tv_biaya_layanan" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

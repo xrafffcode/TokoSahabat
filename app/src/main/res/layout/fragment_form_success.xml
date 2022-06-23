@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.user.FormSuccessFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/actionbar_pembayaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back_pembayaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/color_transparent"
+            android:contentDescription="@string/cd_image_button"
+            android:padding="@dimen/spacing_normal_quarter"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_pembayaran"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_back_pembayaran"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/iv_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_larger"
+        android:contentDescription="@string/cd_image"
+        android:src="@drawable/success"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actionbar_pembayaran" />
+
+    <TextView
+        android:id="@+id/tv_pesanan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_regular"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_regular"
+        android:fontFamily="@font/monsemibold"
+        android:gravity="center"
+        android:text="@string/text_pesanan"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_success" />
+
+    <TextView
+        android:id="@+id/tv_desc_pesanan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:fontFamily="@font/monmed"
+        android:gravity="center"
+        android:text="@string/text_desc_pesanan"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_regular"
+        app:layout_constraintEnd_toEndOf="@+id/tv_pesanan"
+        app:layout_constraintStart_toStartOf="@+id/tv_pesanan"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pesanan" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_cod"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_huge"
+        android:layout_marginTop="@dimen/spacing_larger"
+        android:layout_marginEnd="@dimen/spacing_huge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc_pesanan"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_rv_success" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_selesai"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn_signin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/text_selesai"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large"
+        android:fontFamily="@font/monsemibold"
+        android:textAllCaps="false"
+        android:layout_marginBottom="@dimen/spacing_huge"
+        android:layout_marginStart="@dimen/spacing_huge"
+        android:layout_marginEnd="@dimen/spacing_huge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

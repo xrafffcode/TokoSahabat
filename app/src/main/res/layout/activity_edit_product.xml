@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EditProductActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_edit_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_huge"
+            android:layout_marginTop="@dimen/spacing_giant"
+            android:fontFamily="@font/monreguler"
+            android:text="@string/text_edit_product"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large_med"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_gambar_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_huge"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_gambar_item"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="@+id/tv_edit_product"
+            app:layout_constraintTop_toBottomOf="@+id/tv_edit_product" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:background="@drawable/add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_gambar_item"
+            app:layout_constraintTop_toBottomOf="@id/tv_gambar_item" />
+
+        <TextView
+            android:id="@+id/tv_kode_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_kode_item"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="@+id/btn_add_item"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add_item" />
+
+        <EditText
+            android:id="@+id/edt_kode_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:paddingStart="@dimen/spacing_small"
+            android:textSize="@dimen/font_large"
+            android:fontFamily="@font/monreguler"
+            android:background="@drawable/bg_edittext_signin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_kode_item"
+            app:layout_constraintTop_toBottomOf="@id/tv_kode_item" />
+
+        <TextView
+            android:id="@+id/tv_barcode_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_barcode"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="@+id/edt_kode_item"
+            app:layout_constraintTop_toBottomOf="@+id/edt_kode_item" />
+
+        <EditText
+            android:id="@+id/edt_barcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:paddingStart="@dimen/spacing_small"
+            android:textSize="@dimen/font_large"
+            android:fontFamily="@font/monreguler"
+            android:background="@drawable/bg_edittext_signin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_barcode_item"
+            app:layout_constraintTop_toBottomOf="@+id/tv_barcode_item" />
+
+        <TextView
+            android:id="@+id/tv_nama_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_nama_item"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="@+id/edt_barcode"
+            app:layout_constraintTop_toBottomOf="@+id/edt_barcode" />
+
+        <EditText
+            android:id="@+id/edt_nama_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:paddingStart="@dimen/spacing_small"
+            android:textSize="@dimen/font_large"
+            android:fontFamily="@font/monreguler"
+            android:background="@drawable/bg_edittext_signin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_nama_item"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama_item" />
+
+        <TextView
+            android:id="@+id/tv_jenis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_jenis"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="@+id/edt_nama_item"
+            app:layout_constraintTop_toBottomOf="@+id/edt_nama_item" />
+
+        <EditText
+            android:id="@+id/edt_jenis"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:paddingStart="@dimen/spacing_small"
+            android:textSize="@dimen/font_large"
+            android:fontFamily="@font/monreguler"
+            android:background="@drawable/bg_edittext_signin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_jenis"
+            app:layout_constraintTop_toBottomOf="@+id/tv_jenis" />
+
+        <TextView
+            android:id="@+id/tv_konversi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_konversi"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="@+id/edt_jenis"
+            app:layout_constraintTop_toBottomOf="@+id/edt_jenis" />
+
+        <EditText
+            android:id="@+id/edt_konversi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:paddingStart="@dimen/spacing_small"
+            android:textSize="@dimen/font_large"
+            android:fontFamily="@font/monreguler"
+            android:background="@drawable/bg_edittext_signin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_konversi"
+            app:layout_constraintTop_toBottomOf="@+id/tv_konversi" />
+
+        <TextView
+            android:id="@+id/tv_tipe_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_tipe_item"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="@+id/edt_konversi"
+            app:layout_constraintTop_toBottomOf="@+id/edt_konversi" />
+
+        <EditText
+            android:id="@+id/edt_tipe_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:paddingStart="@dimen/spacing_small"
+            android:textSize="@dimen/font_large"
+            android:fontFamily="@font/monreguler"
+            android:background="@drawable/bg_edittext_signin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_tipe_item"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tipe_item" />
+
+        <TextView
+            android:id="@+id/tv_satuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_satuan"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="@+id/edt_tipe_item"
+            app:layout_constraintTop_toBottomOf="@+id/edt_tipe_item" />
+
+        <EditText
+            android:id="@+id/edt_satuan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:paddingStart="@dimen/spacing_small"
+            android:textSize="@dimen/font_large"
+            android:fontFamily="@font/monreguler"
+            android:background="@drawable/bg_edittext_signin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_satuan"
+            app:layout_constraintTop_toBottomOf="@id/tv_satuan" />
+
+        <TextView
+            android:id="@+id/tv_harga_pokok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_harga_pokok"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="@+id/edt_satuan"
+            app:layout_constraintTop_toBottomOf="@+id/edt_satuan" />
+
+        <EditText
+            android:id="@+id/edt_harga_pokok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:paddingStart="@dimen/spacing_small"
+            android:textSize="@dimen/font_large"
+            android:fontFamily="@font/monreguler"
+            android:background="@drawable/bg_edittext_signin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_harga_pokok"
+            app:layout_constraintTop_toBottomOf="@id/tv_harga_pokok" />
+
+        <TextView
+            android:id="@+id/tv_harga_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_level"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toStartOf="@+id/edt_harga_pokok"
+            app:layout_constraintTop_toBottomOf="@+id/edt_harga_pokok" />
+
+        <EditText
+            android:id="@+id/edt_harga_level"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:paddingStart="@dimen/spacing_small"
+            android:textSize="@dimen/font_large"
+            android:fontFamily="@font/monreguler"
+            android:background="@drawable/bg_edittext_signin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_harga_level"
+            app:layout_constraintTop_toBottomOf="@id/tv_harga_level" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_huge"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:layout_marginEnd="@dimen/spacing_large"
+            android:layout_marginBottom="@dimen/spacing_regular"
+            android:background="@drawable/bg_btn_edit"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_edit"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_harga_level" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

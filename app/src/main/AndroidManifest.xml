@@ -10,10 +10,46 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TokoSahabat">
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".activity.user.SuccessActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.user.FormPembayaranActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.FormAlamatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.CheckoutUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.AkunUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.MyCartListOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.DetailUserActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.DetailOrderAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AllOrderAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.DashboardUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.EditProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddDataAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DashboardAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +57,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.user.SignUpUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LogInAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SignInActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

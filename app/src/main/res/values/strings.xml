@@ -1,3 +1,103 @@
 <resources>
     <string name="app_name">Toko Sahabat</string>
+
+    //sign in
+    <string name="text_email">Email</string>
+    <string name="text_password">Password</string>
+    <string name="text_signin">Sign In</string>
+    <string name="text_loginas">Log in as Admin</string>
+    <string name="text_signup">Sign Up</string>
+    <string name="text_or">Or</string>
+
+    //login admin
+    <string name="text_login">Log In</string>
+
+    //sign up user
+    <string name="text_or_signin_with">or sign in with</string>
+    <string name="text_login_with">Log in with Google</string>
+
+    // dashboard admin
+    <string name="text_search">Search</string>
+    <string name="text_all_products">All Products</string>
+
+    //add data
+    <string name="text_add_product">Add Product</string>
+    <string name="text_gambar_item">Gambar Item</string>
+    <string name="text_kode_item">Kode Item</string>
+    <string name="text_barcode">Barcode</string>
+    <string name="text_nama_item">Nama Item</string>
+    <string name="text_jenis">Jenis Item</string>
+    <string name="text_konversi">Konversi</string>
+    <string name="text_tipe_item">Tipe Item</string>
+    <string name="text_satuan">Satuan</string>
+    <string name="text_harga_pokok">Harga Pokok</string>
+    <string name="text_level">Harga Level 1</string>
+    <string name="text_add">Add</string>
+
+    //edit data
+    <string name="text_edit">Edit</string>
+    <string name="text_edit_product">Edit Product</string>
+
+    //list order
+    <string name="text_id_transaksi">ID Transaksi</string>
+    <string name="text_nama_user">Nama User</string>
+    <string name="text_waktu_order">Waktu Order</string>
+    <string name="text_all_orders">All Order</string>
+    <string name="text_delete">delete</string>
+
+    //detail order admin
+    <string name="text_detail_order">Detail Order</string>
+    <string name="text_produk_yang_dibeli">Produk Yang Dibeli</string>
+    <string name="text_detail_pembayaran">Detail Pembayaran</string>
+    <string name="text_total_bayar">Total Bayar</string>
+    <string name="text_tagihan">Rp. 16,100,-</string>
+
+    //detail user
+    <string name="text_good_day_mocha">Good Day Mocha</string>
+    <string name="text_harga">Rp. 10,850,-</string>
+    <string name="text_pcs">10.00 Pcs</string>
+    <string name="text_add_to_cart">Add to Cart</string>
+    <string name="text_detail_pengiriman">Detail Pengiriman</string>
+    <string name="text_pending">Pending</string>
+    <string name="text_accept">Accept</string>
+
+    //cart list user
+    <string name="text_my_cart_list">My CartList</string>
+    <string name="text_subtotal">Subtotal</string>
+    <string name="text_total">Total</string>
+    <string name="text_checkout">Checkout</string>
+
+    // akun user
+    <string name="text_detail_user">Detail User</string>
+    <string name="text_akun_saya">Akun Saya</string>
+    <string name="text_pengaturan_akun">Pengaturan Akun</string>
+    <string name="text_deni">Deni Fitriani</string>
+    <string name="text_no_telepon">08123456789</string>
+    <string name="text_gmail">denifiti300198@gmail.com</string>
+    <string name="text_isi_alamat">Perum Abdi Negara D1/27, Padamara, Kab. Purbalingga, Jawa Tengah</string>
+
+    //checkout user
+    <string name="text_alamat">Alamat</string>
+    <string name="text_pembayaran">Pembayaran</string>
+    <string name="text_cod">Cash On Delivery</string>
+    <string name="text_order">Order</string>
+
+    //form alamat user
+    <string name="text_simpan">Simpan</string>
+
+    //pembayaran user
+    <string name="text_pembayaran_cod">COD (Bayar di Tempat)</string>
+    <string name="text_bayar">Bayar</string>
+    <string name="text_pesanan">Pesananmu akan segera diproses</string>
+    <string name="text_desc_pesanan">Siapkan uang tunai dan bayar lewat kurir saat menerima barang.</string>
+    <string name="text_selesai">Selesai</string>
+
+
+    //content description
+    <string name="cd_image">image</string>
+    <string name="cd_image_button">image button</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

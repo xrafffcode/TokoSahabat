@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.user.ProfileUserFragment">
+
+    <TextView
+        android:id="@+id/tv_detail_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:layout_marginTop="@dimen/spacing_giant"
+        android:fontFamily="@font/monreguler"
+        android:text="@string/text_detail_user"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_large_med"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_akun_saya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/text_akun_saya"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_regular"
+        app:layout_constraintStart_toStartOf="@+id/tv_detail_user"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_user" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:layout_marginEnd="@dimen/spacing_large"
+        android:background="@drawable/bg_rv_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_akun_saya"
+        app:layout_constraintTop_toBottomOf="@+id/tv_akun_saya">
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_normal_quarter"
+            android:src="@drawable/img_produk"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/cd_image"/>
+
+        <TextView
+            android:id="@+id/tv_nama_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:layout_marginTop="@dimen/spacing_normal_quarter"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_deni"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_no_telepon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_weeny"
+            android:fontFamily="@font/monmed"
+            android:text="@string/text_no_telepon"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_regular"
+            app:layout_constraintStart_toStartOf="@+id/tv_nama_profile"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nama_profile" />
+
+        <TextView
+            android:id="@+id/tv_gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_weeny"
+            android:fontFamily="@font/monmed"
+            android:text="@string/text_gmail"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_small"
+            app:layout_constraintStart_toStartOf="@+id/tv_no_telepon"
+            app:layout_constraintTop_toBottomOf="@+id/tv_no_telepon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_pengaturan_akun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/text_pengaturan_akun"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_large"
+        app:layout_constraintStart_toStartOf="@+id/cl_profile"
+        app:layout_constraintTop_toBottomOf="@+id/cl_profile" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_akun"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/cl_profile"
+        app:layout_constraintStart_toStartOf="@+id/tv_pengaturan_akun"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pengaturan_akun"
+        tools:listitem="@layout/item_rv_akun_user"
+        tools:itemCount="3"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

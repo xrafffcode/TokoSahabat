@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- REVAMP APPS DIMENS -->
+    <!-- Font Sizes -->
+    <dimen name="font_title_app_bar">16sp</dimen>
+    <dimen name="font_title_content">20sp</dimen>
+    <dimen name="font_large">16sp</dimen>
+    <dimen name="font_large_med">24sp</dimen>
+    <dimen name="font_regular">14sp</dimen>
+    <dimen name="font_small">12sp</dimen>
+    <dimen name="font_smaller">10sp</dimen>
+
+    <!-- Radius -->
+    <dimen name="rad_smaller">4dp</dimen>
+    <dimen name="rad_small">6dp</dimen>
+    <dimen name="rad_regular">8dp</dimen>
+    <dimen name="rad_regular_more">10dp</dimen>
+    <dimen name="rad_large">15dp</dimen>
+
+    <!-- Spacing Between Two Views -->
+    <dimen name="spacing_huger">120dp</dimen>
+    <dimen name="spacing_larger">60dp</dimen>
+    <dimen name="spacing_giant_more">110dp</dimen>
+    <dimen name="spacing_giant_two">90dp</dimen>
+    <dimen name="spacing_giant">70dp</dimen>
+    <dimen name="spacing_huge_slight">48dp</dimen>
+    <dimen name="spacing_huge">40dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_regular">16dp</dimen>
+    <dimen name="spacing_normal_quarter">12dp</dimen>
+    <dimen name="spacing_small">10dp</dimen>
+    <dimen name="spacing_smaller">8dp</dimen>
+    <dimen name="spacing_tiny">4dp</dimen>
+    <dimen name="spacing_weeny">2dp</dimen>
+
+    <!-- Item Size -->
+    <dimen name="size_button_back">40dp</dimen>
+    <dimen name="size_progress_bar_drop_down">24dp</dimen>
+
+    <dimen name="size_image_illustration">200dp</dimen>
+    <dimen name="size_image_illustration_height">340dp</dimen>
+
+    <dimen name="size_confirmation_code">300dp</dimen>
+    <dimen name="size_indicator_large">20dp</dimen>
+    <dimen name="size_indicator_regular">10dp</dimen>
+
+    <dimen name="size_register_button_bg">90dp</dimen>
+    <dimen name="size_progress_horizontal">15dp</dimen>
+    <dimen name="size_radio_button_min_width">100dp</dimen>
+</resources>
