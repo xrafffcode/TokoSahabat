@@ -99,12 +99,6 @@ public class HomeFragment extends Fragment {
         DashboardAdminModel ob2 = new DashboardAdminModel(R.drawable.img_produk, "Good Day", "Stock 5 pcs", "Rp. 5,000,-", "delete");
         dashboardadminholder.add(ob2);
 
-        DashboardAdminModel ob3 = new DashboardAdminModel(R.drawable.img_produk, "Aice Choco Melt", "Stock 4 pcs", "Rp. 4,000,-", "delete");
-        dashboardadminholder.add(ob3);
-
-        DashboardAdminModel ob4 = new DashboardAdminModel(R.drawable.img_produk, "Good Day", "Stock 6 pcs", "Rp. 5,000,-", "delete");
-        dashboardadminholder.add(ob4);
-
 
         recyclerView.setAdapter(new DashboardAdminAdapter(dashboardadminholder));
 

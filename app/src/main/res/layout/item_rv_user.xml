@@ -8,6 +8,14 @@
     android:layout_marginTop="@dimen/spacing_regular"
     android:background="@drawable/bg_rv_admin">
 
+    <TextView
+        android:id="@+id/tv_id_user"
+        android:text="id item"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
     <ImageView
         android:id="@+id/iv_produk_user"
         android:layout_width="wrap_content"
@@ -33,28 +41,41 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_stok_user"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/monmed"
         android:layout_marginTop="@dimen/spacing_weeny"
-        android:text="Stock 4 pcs"
+        android:fontFamily="@font/monmed"
+        android:text="Stock"
         android:textColor="@color/black"
         android:textSize="@dimen/font_small"
         app:layout_constraintStart_toStartOf="@+id/tv_name_produk_user"
         app:layout_constraintTop_toBottomOf="@+id/tv_name_produk_user" />
 
     <TextView
+        android:id="@+id/tv_stok_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="@dimen/spacing_weeny"
+        android:fontFamily="@font/monmed"
+        android:text="4"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_small"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_produk_user" />
+
+
+    <TextView
         android:id="@+id/tv_price_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/monmed"
-        android:text="Rp. 4,000,-"
-        android:layout_marginTop="@dimen/spacing_weeny"
+        android:text="4,000,-"
         android:textColor="@color/color_black1"
         android:textSize="@dimen/font_small"
-        app:layout_constraintStart_toStartOf="@+id/tv_stok_user"
-        app:layout_constraintTop_toBottomOf="@+id/tv_stok_user" />
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

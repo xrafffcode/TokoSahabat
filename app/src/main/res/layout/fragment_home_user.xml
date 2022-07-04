@@ -6,8 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.user.HomeUserFragment">
 
-    <EditText
-        android:id="@+id/edt_search"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_product"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/spacing_large"
@@ -31,9 +31,9 @@
         android:background="@color/color_transparent"
         android:contentDescription="@string/cd_image_button"
         android:src="@drawable/search"
-        app:layout_constraintBottom_toBottomOf="@+id/edt_search"
-        app:layout_constraintStart_toEndOf="@+id/edt_search"
-        app:layout_constraintTop_toTopOf="@+id/edt_search" />
+        app:layout_constraintBottom_toBottomOf="@+id/search_product"
+        app:layout_constraintStart_toEndOf="@+id/search_product"
+        app:layout_constraintTop_toTopOf="@+id/search_product" />
 
     <TextView
         android:id="@+id/tv_all_product"
@@ -47,8 +47,8 @@
         android:textColor="@color/color_black1"
         android:textSize="@dimen/font_large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/edt_search"
-        app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+        app:layout_constraintStart_toStartOf="@+id/search_product"
+        app:layout_constraintTop_toBottomOf="@+id/search_product" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_User"
@@ -58,10 +58,20 @@
         android:layout_marginEnd="@dimen/spacing_large"
         app:layout_constraintEnd_toEndOf="parent"
         tools:itemCount="5"
-        app:layout_constraintStart_toStartOf="@+id/edt_search"
+        app:layout_constraintStart_toStartOf="@+id/search_product"
         app:layout_constraintTop_toBottomOf="@+id/tv_all_product"
         tools:listitem="@layout/item_rv_user" />
 
+    <ProgressBar
+        android:id="@+id/pb_data"
+        style="?android:attr/progressBarStyle"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView_User"
+        app:layout_constraintTop_toBottomOf="@+id/tv_all_product" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

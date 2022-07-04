@@ -7,7 +7,7 @@
     tools:context=".fragment.CartFragment">
 
     <EditText
-        android:id="@+id/edt_search"
+        android:id="@+id/search_product"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/spacing_large"
@@ -31,9 +31,9 @@
         android:background="@color/color_transparent"
         android:contentDescription="@string/cd_image_button"
         android:src="@drawable/search"
-        app:layout_constraintBottom_toBottomOf="@+id/edt_search"
-        app:layout_constraintStart_toEndOf="@+id/edt_search"
-        app:layout_constraintTop_toTopOf="@+id/edt_search" />
+        app:layout_constraintBottom_toBottomOf="@+id/search_product"
+        app:layout_constraintStart_toEndOf="@+id/search_product"
+        app:layout_constraintTop_toTopOf="@+id/search_product" />
 
     <TextView
         android:id="@+id/tv_all_product"
@@ -47,8 +47,8 @@
         android:textColor="@color/color_black1"
         android:textSize="@dimen/font_large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/edt_search"
-        app:layout_constraintTop_toBottomOf="@+id/edt_search" />
+        app:layout_constraintStart_toStartOf="@+id/search_product"
+        app:layout_constraintTop_toBottomOf="@+id/search_product" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_all_order"

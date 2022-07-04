@@ -2,19 +2,35 @@ package com.example.tokosahabat.fragment.user;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.example.tokosahabat.API.APIRequestData;
+import com.example.tokosahabat.API.RetroServer;
 import com.example.tokosahabat.R;
+import com.example.tokosahabat.adapter.AdapterData;
 import com.example.tokosahabat.adapter.DashboardUserAdapter;
 import com.example.tokosahabat.model.DashboardUserModel;
+import com.example.tokosahabat.model.DataModel;
+import com.example.tokosahabat.model.ResponseModel;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,8 +49,12 @@ public class HomeUserFragment extends Fragment {
     private String mParam2;
 
     //recyclerview
-    RecyclerView recyclerView;
-    ArrayList<DashboardUserModel> dasboarduserholder;
+    private RecyclerView rvData;
+    private RecyclerView.Adapter adData;
+    private RecyclerView.LayoutManager lmData;
+    private List<DataModel> listData = new ArrayList<>();
+    private ProgressBar pbData;
+    private SearchView svData;
 
     public HomeUserFragment() {
         // Required empty public constructor
@@ -72,29 +92,70 @@ public class HomeUserFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home_user, container, false);
-        recyclerView = view.findViewById(R.id.recyclerView_User);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        dasboarduserholder = new ArrayList<>();
+        rvData = view.findViewById(R.id.recyclerView_User);
+        pbData = view.findViewById(R.id.pb_data);
+        svData = view.findViewById(R.id.search_product);
 
-        DashboardUserModel ob1 = new DashboardUserModel(R.drawable.img_produk, "Aice Choco Melt", "Stock 4 pcs", "Rp. 4,000,-");
-        dasboarduserholder.add(ob1);
+        lmData = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        rvData.setLayoutManager(lmData);retrieveData();
 
-        DashboardUserModel ob2 = new DashboardUserModel(R.drawable.img_produk, "Good Day", "Stock 5 pcs", "Rp. 5,000,-");
-        dasboarduserholder.add(ob2);
-
-        DashboardUserModel ob3 = new DashboardUserModel(R.drawable.img_produk, "Aice Choco Melt", "Stock 4 pcs", "Rp. 4,000,-");
-        dasboarduserholder.add(ob3);
-
-        DashboardUserModel ob4 = new DashboardUserModel(R.drawable.img_produk, "Good Day", "Stock 6 pcs", "Rp. 5,000,-");
-        dasboarduserholder.add(ob4);
-
-        DashboardUserModel ob5 = new DashboardUserModel(R.drawable.img_produk, "Aice Choco Melt", "Stock 4 pcs", "Rp. 4,000,-");
-        dasboarduserholder.add(ob5);
-
-
-        recyclerView.setAdapter(new DashboardUserAdapter(dasboarduserholder));
+        SetupSearchView();
 
         return view;
     }
+
+    private void SetupSearchView() {
+        final SearchView searchView = svData;
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        retrieveData();
+    }
+
+    public void retrieveData(){
+        pbData.setVisibility(View.VISIBLE);
+
+        APIRequestData ardData = RetroServer.konekRetrofit().create(APIRequestData.class);
+        Call<ResponseModel> tampilData = ardData.ardRertrieveData();
+
+        tampilData.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                int kode = response.body().getKode();
+                String pesan = response.body().getPesan();
+
+
+
+                listData = response.body().getData();
+
+                adData = new AdapterData(getContext(), listData);
+                rvData.setAdapter(adData);
+                adData.notifyDataSetChanged();
+
+                pbData.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                Toast.makeText(getActivity(), "Gagal Tehubung Dengan Serve : "+t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                pbData.setVisibility(View.INVISIBLE);
+            }
+        });
+    }
+
 }
