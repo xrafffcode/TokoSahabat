@@ -61,7 +61,7 @@
             app:layout_constraintStart_toStartOf="@+id/edt_email"
             app:layout_constraintTop_toBottomOf="@+id/edt_email" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="0dp"
@@ -69,18 +69,14 @@
             android:layout_marginTop="@dimen/spacing_normal_quarter"
             android:layout_marginEnd="@dimen/spacing_huge_slight"
             app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/bg_edittext_signin"
+            android:fontFamily="@font/monreguler"
+            android:paddingStart="@dimen/spacing_small"
             app:layout_constraintStart_toStartOf="@id/tv_password"
-            app:layout_constraintTop_toBottomOf="@id/tv_password"
-            app:passwordToggleEnabled="true">
+            app:layout_constraintTop_toBottomOf="@id/tv_password">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_edittext_signin"
-                android:fontFamily="@font/monreguler"
-                android:inputType="textPassword"
-                android:paddingStart="@dimen/spacing_small" />
-        </com.google.android.material.textfield.TextInputLayout>
+
+        </com.google.android.material.textfield.TextInputEditText>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_sign_in"

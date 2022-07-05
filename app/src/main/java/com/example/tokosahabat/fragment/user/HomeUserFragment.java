@@ -56,6 +56,7 @@ public class HomeUserFragment extends Fragment {
     private ProgressBar pbData;
     private SearchView svData;
 
+
     public HomeUserFragment() {
         // Required empty public constructor
     }

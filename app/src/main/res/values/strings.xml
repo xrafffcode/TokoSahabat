@@ -20,7 +20,7 @@
     <string name="text_search">Search</string>
     <string name="text_all_products">All Products</string>
 
-    //add data
+    //add loginData
     <string name="text_add_product">Add Product</string>
     <string name="text_gambar_item">Gambar Item</string>
     <string name="text_kode_item">Kode Item</string>
@@ -34,7 +34,7 @@
     <string name="text_level">Harga Level 1</string>
     <string name="text_add">Add</string>
 
-    //edit data
+    //edit loginData
     <string name="text_edit">Edit</string>
     <string name="text_edit_product">Edit Product</string>
 

@@ -18,14 +18,14 @@
 
     <ImageView
         android:id="@+id/iv_produk_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/img_produk"
+        android:layout_width="92dp"
+        android:layout_height="92dp"
+        android:contentDescription="@string/cd_image"
         android:padding="@dimen/spacing_normal_quarter"
+        android:src="@drawable/img_produk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/cd_image" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_name_produk_user"
