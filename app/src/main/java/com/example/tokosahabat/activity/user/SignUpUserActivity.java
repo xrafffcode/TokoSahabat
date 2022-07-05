@@ -9,8 +9,6 @@ import android.widget.Toast;
 
 import com.example.tokosahabat.API.APIRequestData;
 import com.example.tokosahabat.API.RetroServer;
-import com.example.tokosahabat.activity.DashboardAdminActivity;
-import com.example.tokosahabat.activity.LogInAdminActivity;
 import com.example.tokosahabat.activity.SignInActivity;
 import com.example.tokosahabat.databinding.ActivitySignUpUserBinding;
 import com.example.tokosahabat.model.register.Register;
@@ -40,7 +38,12 @@ public class SignUpUserActivity extends AppCompatActivity {
 
                 Username = binding.edtEmail.getText().toString();
                 Password = binding.edtPassword.getText().toString();
-                register(Username, Password);
+                if(Username.matches("") && Password.matches("")){
+                    Toast.makeText(SignUpUserActivity.this, "Email Atau Password Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
+                    return;
+                }else{
+                   register(Username, Password);
+                }
 
 
             }

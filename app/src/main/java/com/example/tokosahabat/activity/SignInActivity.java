@@ -4,15 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tokosahabat.API.APIRequestData;
 import com.example.tokosahabat.API.RetroServer;
-import com.example.tokosahabat.R;
 import com.example.tokosahabat.activity.user.DashboardUserActivity;
 import com.example.tokosahabat.activity.user.SignUpUserActivity;
 import com.example.tokosahabat.databinding.ActivitySignInBinding;
@@ -44,7 +40,12 @@ public class SignInActivity extends AppCompatActivity {
 
                 Username = binding.edtEmail.getText().toString();
                 Password = binding.edtPassword.getText().toString();
-                login(Username,Password);
+                if(Username.matches("") && Password.matches("")){
+                    Toast.makeText(SignInActivity.this, "Email Atau Password Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
+                    return;
+                }else{
+                   login(Username, Password);
+                }
 
             }
         });
@@ -75,6 +76,7 @@ public class SignInActivity extends AppCompatActivity {
         apiInterface = RetroServer.konekRetrofit().create(APIRequestData.class);
         Call<Login> loginCall = apiInterface.loginResponse(email,password);
         loginCall.enqueue(new Callback<Login>() {
+
             @Override
             public void onResponse(Call<Login> call, Response<Login> response) {
                 if(response.body() != null && response.isSuccessful() && response.body().isStatus()){
