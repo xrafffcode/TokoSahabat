@@ -3,6 +3,7 @@ package com.example.tokosahabat.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,22 +12,37 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.example.tokosahabat.API.APIRequestData;
+import com.example.tokosahabat.API.RetroServer;
 import com.example.tokosahabat.R;
 import com.example.tokosahabat.activity.AddDataAdminActivity;
+import com.example.tokosahabat.activity.SignInActivity;
+import com.example.tokosahabat.activity.user.SignUpUserActivity;
+import com.example.tokosahabat.adapter.AdapterData;
+import com.example.tokosahabat.adapter.AdapterDataAdmin;
 import com.example.tokosahabat.adapter.DashboardAdminAdapter;
 import com.example.tokosahabat.adapter.DashboardUserAdapter;
 import com.example.tokosahabat.model.DashboardAdminModel;
 import com.example.tokosahabat.model.DashboardUserModel;
+import com.example.tokosahabat.model.DataModel;
+import com.example.tokosahabat.model.ResponseModel;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,8 +53,14 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    RecyclerView recyclerView;
-    ArrayList<DashboardAdminModel> dashboardadminholder;
+    //recyclerview
+    private RecyclerView rvData;
+    private RecyclerView.Adapter adData;
+    private RecyclerView.LayoutManager lmData;
+    private List<DataModel> listData = new ArrayList<>();
+    private ProgressBar pbData;
+    private SearchView svData;
+    private ImageButton btnAdd;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -76,32 +98,53 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
-        ImageButton btnAdd = (ImageButton) view.findViewById(R.id.btn_add_product);
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(), AddDataAdminActivity.class);
-                startActivity(intent);
-            }
-        });
+        rvData = view.findViewById(R.id.recyclerView_Admin);
+        pbData = view.findViewById(R.id.pb_admin);
+        btnAdd = view.findViewById(R.id.btn_add_product);
 
+        lmData = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        rvData.setLayoutManager(lmData);retrieveData();
 
-
-        recyclerView = view.findViewById(R.id.recyclerView_Admin);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        dashboardadminholder = new ArrayList<>();
-
-        DashboardAdminModel ob1 = new DashboardAdminModel(R.drawable.img_produk, "Aice Choco Melt", "Stock 4 pcs", "Rp. 4,000,-", "delete");
-        dashboardadminholder.add(ob1);
-
-        DashboardAdminModel ob2 = new DashboardAdminModel(R.drawable.img_produk, "Good Day", "Stock 5 pcs", "Rp. 5,000,-", "delete");
-        dashboardadminholder.add(ob2);
-
-
-        recyclerView.setAdapter(new DashboardAdminAdapter(dashboardadminholder));
+        btnAdd.setOnClickListener(this);
 
         return view;
+    }
+
+    private void retrieveData() {
+        pbData.setVisibility(View.VISIBLE);
+
+        APIRequestData ardData = RetroServer.konekRetrofit().create(APIRequestData.class);
+        Call<ResponseModel> tampilData = ardData.ardRertrieveData();
+
+        tampilData.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                int kode = response.body().getKode();
+                String pesan = response.body().getPesan();
+
+
+
+                listData = response.body().getData();
+
+                adData = new AdapterDataAdmin(getContext(), listData);
+                rvData.setAdapter(adData);
+                adData.notifyDataSetChanged();
+
+                pbData.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                Toast.makeText(getActivity(), "Gagal Tehubung Dengan Serve : "+t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                pbData.setVisibility(View.INVISIBLE);
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(getContext(), AddDataAdminActivity.class));
     }
 }

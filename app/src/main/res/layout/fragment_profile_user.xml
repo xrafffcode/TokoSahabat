@@ -79,16 +79,31 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_nama_profile" />
 
         <TextView
-            android:id="@+id/tv_gmail"
+            android:id="@+id/tv_gmail_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_weeny"
             android:fontFamily="@font/monmed"
-            android:text="@string/text_gmail"
+            android:text="gmail"
             android:textColor="@color/color_black1"
             android:textSize="@dimen/font_small"
             app:layout_constraintStart_toStartOf="@+id/tv_no_telepon"
             app:layout_constraintTop_toBottomOf="@+id/tv_no_telepon" />
+
+        <TextView
+            android:id="@+id/tv_logout_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monmed"
+            android:text="Logout"
+            android:textColor="@color/color_black1"
+            android:textSize="@dimen/font_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.886"
+            app:layout_constraintStart_toEndOf="@+id/tv_no_telepon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.492" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView

@@ -37,7 +37,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_edit_product" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_add_item"
+            android:id="@+id/edt_gambar_item"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_small"
@@ -56,8 +56,8 @@
             android:text="@string/text_kode_item"
             android:textColor="@color/color_black1"
             android:textSize="@dimen/font_large"
-            app:layout_constraintStart_toStartOf="@+id/btn_add_item"
-            app:layout_constraintTop_toBottomOf="@+id/btn_add_item" />
+            app:layout_constraintStart_toStartOf="@+id/edt_gambar_item"
+            app:layout_constraintTop_toBottomOf="@+id/edt_gambar_item" />
 
         <EditText
             android:id="@+id/edt_kode_item"

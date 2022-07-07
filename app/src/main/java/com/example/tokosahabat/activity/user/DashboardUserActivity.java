@@ -5,15 +5,15 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.tokosahabat.R;
+import com.example.tokosahabat.SessionManager;
+import com.example.tokosahabat.activity.SignInActivity;
 import com.example.tokosahabat.databinding.ActivityDashboardUserBinding;
-import com.example.tokosahabat.fragment.CartFragment;
-import com.example.tokosahabat.fragment.HomeFragment;
-import com.example.tokosahabat.fragment.ProfileFragment;
-import com.example.tokosahabat.fragment.SearchFragment;
 import com.example.tokosahabat.fragment.user.CartUserFragment;
 import com.example.tokosahabat.fragment.user.HomeUserFragment;
 import com.example.tokosahabat.fragment.user.ProfileUserFragment;
@@ -21,7 +21,10 @@ import com.example.tokosahabat.fragment.user.SearchUserFragment;
 
 public class DashboardUserActivity extends AppCompatActivity {
 
+    SessionManager sessionManager;
     ActivityDashboardUserBinding binding;
+    TextView etEmail;
+    String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,12 @@ public class DashboardUserActivity extends AppCompatActivity {
         setContentView(view);
         replaceFragment(new HomeUserFragment());
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_user, new HomeUserFragment()).commit();
+
+        sessionManager = new SessionManager(DashboardUserActivity.this);
+        if(!sessionManager.isLoggedIn()){
+            moveToLogin();
+        }
+
 
         binding.bottomNavUser.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
@@ -51,6 +60,14 @@ public class DashboardUserActivity extends AppCompatActivity {
         });
 
     }
+
+    private void moveToLogin() {
+        Intent intent = new Intent(DashboardUserActivity.this, SignInActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        finish();
+    }
+
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

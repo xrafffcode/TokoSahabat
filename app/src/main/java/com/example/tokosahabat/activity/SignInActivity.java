@@ -9,10 +9,12 @@ import android.widget.Toast;
 
 import com.example.tokosahabat.API.APIRequestData;
 import com.example.tokosahabat.API.RetroServer;
+import com.example.tokosahabat.SessionManager;
 import com.example.tokosahabat.activity.user.DashboardUserActivity;
 import com.example.tokosahabat.activity.user.SignUpUserActivity;
 import com.example.tokosahabat.databinding.ActivitySignInBinding;
 import com.example.tokosahabat.model.login.Login;
+import com.example.tokosahabat.model.login.LoginData;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,6 +26,7 @@ public class SignInActivity extends AppCompatActivity {
     ActivitySignInBinding binding;
     private String Username;
     private String Password;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,8 +85,13 @@ public class SignInActivity extends AppCompatActivity {
                 if(response.body() != null && response.isSuccessful() && response.body().isStatus()){
 
 
+                    // Ini untuk menyimpan sesi
+                    sessionManager = new SessionManager(SignInActivity.this);
+                    LoginData loginData = response.body().getLoginData();
+                    sessionManager.createLoginSession(loginData);
+
                     //Ini untuk pindah
-                    Toast.makeText(SignInActivity.this, response.body().getData().getEmail(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, response.body().getLoginData().getEmail(), Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(SignInActivity.this, DashboardUserActivity.class));
                     finish();
                 } else {

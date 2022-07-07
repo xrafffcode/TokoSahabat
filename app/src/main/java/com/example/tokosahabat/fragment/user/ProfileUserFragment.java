@@ -1,7 +1,9 @@
 package com.example.tokosahabat.fragment.user;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,9 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.tokosahabat.R;
+import com.example.tokosahabat.SessionManager;
+import com.example.tokosahabat.activity.SignInActivity;
 import com.example.tokosahabat.adapter.AkunAdapter;
+import com.example.tokosahabat.databinding.ActivityDashboardUserBinding;
 import com.example.tokosahabat.model.AkunModel;
 
 import java.util.ArrayList;
@@ -21,7 +27,7 @@ import java.util.ArrayList;
  * Use the {@link ProfileUserFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProfileUserFragment extends Fragment {
+public class ProfileUserFragment extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,6 +40,9 @@ public class ProfileUserFragment extends Fragment {
 
     RecyclerView recyclerView;
     ArrayList<AkunModel> akunholder;
+    SessionManager sessionManager;
+    TextView etEmail, btnLogout;
+    String email;
 
     public ProfileUserFragment() {
         // Required empty public constructor
@@ -57,6 +66,8 @@ public class ProfileUserFragment extends Fragment {
         return fragment;
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +85,13 @@ public class ProfileUserFragment extends Fragment {
         recyclerView = view.findViewById(R.id.rv_akun);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         akunholder = new ArrayList<>();
+        sessionManager = new SessionManager(getActivity());
+        etEmail = view.findViewById(R.id.tv_gmail_user);
+        email = sessionManager.getUserDetail().get(SessionManager.EMAIL);
+        etEmail.setText(email);
+
+        btnLogout = view.findViewById(R.id.tv_logout_user);
+        btnLogout.setOnClickListener(this);
 
         AkunModel ob1 = new AkunModel("Alamat", "Perum Abdi Negara D1/27, Padamara, Kab. Purbalingga, Jawa Tengah");
         akunholder.add(ob1);
@@ -87,5 +105,18 @@ public class ProfileUserFragment extends Fragment {
         recyclerView.setAdapter(new AkunAdapter(akunholder));
 
         return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+        sessionManager.logoutSession();
+        moveToLogin();
+    }
+
+    private void moveToLogin() {
+        Intent intent = new Intent(getActivity(), SignInActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        getActivity().finish();
     }
 }
