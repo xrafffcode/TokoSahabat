@@ -7,6 +7,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,6 +62,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private ProgressBar pbData;
     private SearchView svData;
     private ImageButton btnAdd;
+    private SwipeRefreshLayout srlData;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -101,6 +103,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         rvData = view.findViewById(R.id.recyclerView_Admin);
         pbData = view.findViewById(R.id.pb_admin);
+        srlData = view.findViewById(R.id.srl_data);
         btnAdd = view.findViewById(R.id.btn_add_product);
 
         lmData = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
@@ -108,7 +111,22 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         btnAdd.setOnClickListener(this);
 
+        srlData.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                srlData.setRefreshing(true);
+                retrieveData();
+                srlData.setRefreshing(false);
+            }
+        });
+
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        retrieveData();
     }
 
     private void retrieveData() {

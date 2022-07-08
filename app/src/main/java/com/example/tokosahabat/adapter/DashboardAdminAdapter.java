@@ -57,7 +57,6 @@ public class DashboardAdminAdapter extends RecyclerView.Adapter<DashboardAdminAd
             name = itemView.findViewById(R.id.tv_name_produk);
             stock = itemView.findViewById(R.id.tv_stok);
             price = itemView.findViewById(R.id.tv_price);
-            delete = itemView.findViewById(R.id.tv_delete);
         }
     }
 }

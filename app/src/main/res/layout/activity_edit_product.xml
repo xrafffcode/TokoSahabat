@@ -282,7 +282,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_harga_level" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_add"
+            android:id="@+id/btn_add_produk"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_huge"

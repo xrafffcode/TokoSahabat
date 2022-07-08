@@ -64,16 +64,4 @@
         app:layout_constraintStart_toStartOf="@+id/tv_stok"
         app:layout_constraintTop_toBottomOf="@+id/tv_stok" />
 
-    <TextView
-        android:id="@+id/tv_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/monreguler"
-        android:text="@string/text_delete"
-        android:textColor="@color/red_700"
-        android:layout_marginEnd="@dimen/spacing_regular"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
