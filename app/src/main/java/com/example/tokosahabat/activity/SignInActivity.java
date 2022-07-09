@@ -24,7 +24,7 @@ public class SignInActivity extends AppCompatActivity {
 
     APIRequestData apiInterface;
     ActivitySignInBinding binding;
-    private String Username;
+    private String Email;
     private String Password;
     SessionManager sessionManager;
 
@@ -41,13 +41,13 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Username = binding.edtEmail.getText().toString();
+                Email = binding.edtEmail.getText().toString();
                 Password = binding.edtPassword.getText().toString();
-                if(Username.matches("") && Password.matches("")){
+                if(Email.matches("") && Password.matches("")){
                     Toast.makeText(SignInActivity.this, "Email Atau Password Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
                     return;
                 }else{
-                   login(Username, Password);
+                   login(Email, Password);
                 }
 
             }

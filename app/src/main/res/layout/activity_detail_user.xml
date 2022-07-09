@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/iv_good_day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_marginTop="@dimen/spacing_giant"
         android:src="@drawable/good_day"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,12 +20,13 @@
         android:id="@+id/tv_name_produk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="@dimen/spacing_large"
         android:fontFamily="@font/monreguler"
         android:text="@string/text_good_day_mocha"
         android:textColor="@color/color_black1"
         android:textSize="@dimen/font_large_med"
-        app:layout_constraintStart_toStartOf="@+id/iv_good_day"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_good_day" />
 
     <TextView
@@ -44,11 +45,12 @@
         android:id="@+id/tv_pcs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
         android:fontFamily="@font/monsemibold"
         android:text="@string/text_pcs"
         android:textColor="@color/color_black1"
         android:textSize="@dimen/font_large"
-        app:layout_constraintEnd_toEndOf="@+id/iv_good_day"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_harga" />
 
     <androidx.appcompat.widget.AppCompatButton

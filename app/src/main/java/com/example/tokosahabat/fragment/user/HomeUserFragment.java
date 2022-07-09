@@ -2,15 +2,12 @@ package com.example.tokosahabat.fragment.user;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -20,8 +17,6 @@ import com.example.tokosahabat.API.APIRequestData;
 import com.example.tokosahabat.API.RetroServer;
 import com.example.tokosahabat.R;
 import com.example.tokosahabat.adapter.AdapterData;
-import com.example.tokosahabat.adapter.DashboardUserAdapter;
-import com.example.tokosahabat.model.DashboardUserModel;
 import com.example.tokosahabat.model.DataModel;
 import com.example.tokosahabat.model.ResponseModel;
 

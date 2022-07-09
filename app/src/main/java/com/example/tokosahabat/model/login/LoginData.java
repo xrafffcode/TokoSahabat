@@ -1,22 +1,43 @@
 package com.example.tokosahabat.model.login;
 
-import com.google.gson.annotations.SerializedName;
-
 public class LoginData {
-	@SerializedName("id_user")
-	private String userId;
-
-	@SerializedName("email")
+	private String password;
+	private String nama;
+	private String telepon;
+	private String id_user;
 	private String email;
+	private String username;
 
-
-
-	public void setUserId(String userId){
-		this.userId = userId;
+	public void setPassword(String password){
+		this.password = password;
 	}
 
-	public String getUserId(){
-		return userId;
+	public String getPassword(){
+		return password;
+	}
+
+	public void setNama(String nama){
+		this.nama = nama;
+	}
+
+	public String getNama(){
+		return nama;
+	}
+
+	public void setTelepon(String telepon){
+		this.telepon = telepon;
+	}
+
+	public String getTelepon(){
+		return telepon;
+	}
+
+	public void setIdUser(String id_user){
+		this.id_user = id_user;
+	}
+
+	public String getIdUser(){
+		return id_user;
 	}
 
 	public void setEmail(String email){
@@ -27,4 +48,11 @@ public class LoginData {
 		return email;
 	}
 
+	public void setUsername(String username){
+		this.username = username;
+	}
+
+	public String getUsername(){
+		return username;
+	}
 }

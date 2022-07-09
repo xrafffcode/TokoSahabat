@@ -22,7 +22,10 @@ public interface APIRequestData {
     @POST("register.php")
     Call<Register> registerResponse(
             @Field("email") String email,
-            @Field("password") String password
+            @Field("username") String username,
+            @Field("password") String password,
+            @Field("nama") String nama,
+            @Field("telepon") String telepon
     );
 
 
@@ -44,4 +47,39 @@ public interface APIRequestData {
 
     @GET("retrieve.php")
     Call<ResponseModel> ardRertrieveData();
+
+    @FormUrlEncoded
+    @POST("delete.php")
+    Call<ResponseModel> ardDeleteData(
+            @Field("id_item") int id_item
+    );
+
+    @FormUrlEncoded
+    @POST("edit.php")
+    Call<ResponseModel> ardEditData(
+            @Field("id_item") int id_item
+    );
+
+    @FormUrlEncoded
+    @POST("detail_produk.php")
+    Call<ResponseModel> ardDetailData(
+            @Field("id_item") int id_item
+    );
+
+    @FormUrlEncoded
+    @POST("update.php")
+    Call<ResponseModel> ardUpdateData(
+            @Field("id_item") int id_item,
+            @Field("gambar_item") String gambar_item,
+            @Field("kode_item") String kode_item,
+            @Field("barcode") String barcode,
+            @Field("nama_item") String nama_item,
+            @Field("stok_item") String stok_item,
+            @Field("jenis_item") String jenis_item,
+            @Field("konversi") String konversi,
+            @Field("tipe_item") String tipe_item,
+            @Field("satuan") String satuan,
+            @Field("harga_pokok") String harga_pokok,
+            @Field("harga_level") String harga_level
+    );
 }

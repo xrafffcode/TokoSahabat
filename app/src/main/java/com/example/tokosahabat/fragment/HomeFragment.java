@@ -20,14 +20,7 @@ import com.example.tokosahabat.API.APIRequestData;
 import com.example.tokosahabat.API.RetroServer;
 import com.example.tokosahabat.R;
 import com.example.tokosahabat.activity.AddDataAdminActivity;
-import com.example.tokosahabat.activity.SignInActivity;
-import com.example.tokosahabat.activity.user.SignUpUserActivity;
-import com.example.tokosahabat.adapter.AdapterData;
 import com.example.tokosahabat.adapter.AdapterDataAdmin;
-import com.example.tokosahabat.adapter.DashboardAdminAdapter;
-import com.example.tokosahabat.adapter.DashboardUserAdapter;
-import com.example.tokosahabat.model.DashboardAdminModel;
-import com.example.tokosahabat.model.DashboardUserModel;
 import com.example.tokosahabat.model.DataModel;
 import com.example.tokosahabat.model.ResponseModel;
 
@@ -55,14 +48,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private String mParam2;
 
     //recyclerview
-    private RecyclerView rvData;
-    private RecyclerView.Adapter adData;
-    private RecyclerView.LayoutManager lmData;
-    private List<DataModel> listData = new ArrayList<>();
-    private ProgressBar pbData;
-    private SearchView svData;
-    private ImageButton btnAdd;
-    private SwipeRefreshLayout srlData;
+    public RecyclerView rvData;
+    public RecyclerView.Adapter adData;
+    public RecyclerView.LayoutManager lmData;
+    public List<DataModel> listData = new ArrayList<>();
+    public ProgressBar pbData;
+    public SearchView svData;
+    public ImageButton btnAdd;
+    public SwipeRefreshLayout srlData;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -129,7 +122,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         retrieveData();
     }
 
-    private void retrieveData() {
+    public void retrieveData() {
         pbData.setVisibility(View.VISIBLE);
 
         APIRequestData ardData = RetroServer.konekRetrofit().create(APIRequestData.class);

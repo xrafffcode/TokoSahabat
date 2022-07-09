@@ -41,8 +41,8 @@ public class ProfileUserFragment extends Fragment implements View.OnClickListene
     RecyclerView recyclerView;
     ArrayList<AkunModel> akunholder;
     SessionManager sessionManager;
-    TextView etEmail, btnLogout;
-    String email;
+    TextView etEmail, btnLogout, etNama, etTelepon;
+    String email, telepon, nama;
 
     public ProfileUserFragment() {
         // Required empty public constructor
@@ -87,8 +87,14 @@ public class ProfileUserFragment extends Fragment implements View.OnClickListene
         akunholder = new ArrayList<>();
         sessionManager = new SessionManager(getActivity());
         etEmail = view.findViewById(R.id.tv_gmail_user);
+        etNama = view.findViewById(R.id.tv_nama_profile);
+        etTelepon = view.findViewById(R.id.tv_no_telepon);
         email = sessionManager.getUserDetail().get(SessionManager.EMAIL);
+        telepon = sessionManager.getUserDetail().get(SessionManager.TELEPON);
+        nama = sessionManager.getUserDetail().get(SessionManager.NAMA);
         etEmail.setText(email);
+        etNama.setText(nama);
+        etTelepon.setText(telepon);
 
         btnLogout = view.findViewById(R.id.tv_logout_user);
         btnLogout.setOnClickListener(this);
@@ -96,7 +102,7 @@ public class ProfileUserFragment extends Fragment implements View.OnClickListene
         AkunModel ob1 = new AkunModel("Alamat", "Perum Abdi Negara D1/27, Padamara, Kab. Purbalingga, Jawa Tengah");
         akunholder.add(ob1);
 
-        AkunModel ob2 = new AkunModel("Nomor Telepon", "081123456789");
+        AkunModel ob2 = new AkunModel("Nomor Telepon", telepon);
         akunholder.add(ob2);
 
         AkunModel ob3 = new AkunModel("Keamanan Akun", "Kata Sandi");

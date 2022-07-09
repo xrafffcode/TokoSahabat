@@ -5,9 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.tokosahabat.API.APIRequestData;
@@ -38,14 +36,14 @@ public class AddDataAdminActivity extends AppCompatActivity {
         etKodeItem = findViewById(R.id.edt_kode_item);
         etBarcode = findViewById(R.id.edt_barcode);
         etNamaItem = findViewById(R.id.edt_nama_item);
-        etStokItem = findViewById(R.id.edt_stok_item);
-        etJenisItem = findViewById(R.id.edt_jenis);
+        etStokItem = findViewById(R.id.edt_stok);
+        etJenisItem = findViewById(R.id.edt_jenis_item);
         etKonversi = findViewById(R.id.edt_konversi);
         etTipeItem = findViewById(R.id.edt_tipe_item);
         etSatuan = findViewById(R.id.edt_satuan);
         etHargaPokok = findViewById(R.id.edt_harga_pokok);
         etHargaLevel = findViewById(R.id.edt_harga_level);
-        btnSimpan = findViewById(R.id.btn_add_produk);
+        btnSimpan = findViewById(R.id.btn_edit_produk);
 
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override

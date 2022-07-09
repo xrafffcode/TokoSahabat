@@ -21,8 +21,8 @@ public class SignUpUserActivity extends AppCompatActivity {
 
     ActivitySignUpUserBinding binding;
     APIRequestData apiInterface;
-    private String Username;
-    private String Password;
+    private String Email, Username, Password, Nama, Telepon;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +36,16 @@ public class SignUpUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Username = binding.edtEmail.getText().toString();
+                Email = binding.edtEmail.getText().toString();
+                Username = binding.edtUsername.getText().toString();
                 Password = binding.edtPassword.getText().toString();
-                if(Username.matches("") && Password.matches("")){
+                Nama = binding.edtNama.getText().toString();
+                Telepon = binding.edtTelepon.getText().toString();
+                if(Email.matches("") && Username.matches("") && Password.matches("") && Nama.matches("") && Telepon.matches("")){
                     Toast.makeText(SignUpUserActivity.this, "Email Atau Password Tidak Boleh Kosong", Toast.LENGTH_SHORT).show();
                     return;
                 }else{
-                   register(Username, Password);
+                   register(Email, Username, Password, Nama, Telepon);
                 }
 
 
@@ -50,14 +53,14 @@ public class SignUpUserActivity extends AppCompatActivity {
         });
     }
 
-    private void register(String username, String password) {
+    private void register(String email, String username, String password, String nama, String telepon) {
         apiInterface = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<Register> call = apiInterface.registerResponse(username, password);
+        Call<Register> call = apiInterface.registerResponse(email, username, password, nama, telepon);
         call.enqueue(new Callback<Register>() {
             @Override
             public void onResponse(Call<Register> call, Response<Register> response) {
                 if(response.body() != null && response.isSuccessful() && response.body().isStatus()){
-                    Toast.makeText(SignUpUserActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText( SignUpUserActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(SignUpUserActivity.this, SignInActivity.class);
                     startActivity(intent);
                     finish();
