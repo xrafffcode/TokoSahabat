@@ -1,37 +1,53 @@
 package com.example.tokosahabat.model;
 
-public class MyCartListModel {
+import android.os.Parcelable;
 
-  int image;
-  String name, price;
+import java.io.Serializable;
 
-    public MyCartListModel(int image, String name, String price) {
-        this.image = image;
-        this.name = name;
-        this.price = price;
-    }
+public class MyCartListModel implements Serializable {
+        private int id_item, id_keranjang;
+        private String nama_item, gambar_item, harga_pokok;
 
-    public int getImage() {
-        return image;
-    }
+        public int getId_keranjang() {
+            return id_keranjang;
+        }
 
-    public void setImage(int image) {
-        this.image = image;
-    }
+        public void setId_keranjang(int id_keranjang) {
+            this.id_keranjang = id_keranjang;
+        }
 
-    public String getName() {
-        return name;
-    }
+        public int getId_item() {
+            return id_item;
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        public void setId_item(int id_item) {
+            this.id_item = id_item;
+        }
 
-    public String getPrice() {
-        return price;
-    }
+        public String getNama_item() {
+            return nama_item;
+        }
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
+        public void setNama_item(String nama_item) {
+            this.nama_item = nama_item;
+        }
+
+        public String getGambar_item() {
+            return gambar_item;
+        }
+
+        public void setGambar_item(String gambar_item) {
+            this.gambar_item = gambar_item;
+        }
+
+        public String getHarga_pokok() {
+            return harga_pokok;
+        }
+
+        public void setHarga_pokok(String harga_pokok) {
+            this.harga_pokok = harga_pokok;
+        }
+
+
 }
+

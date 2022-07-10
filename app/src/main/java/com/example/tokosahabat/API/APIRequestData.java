@@ -1,6 +1,8 @@
 package com.example.tokosahabat.API;
 
+import com.example.tokosahabat.model.Cart;
 import com.example.tokosahabat.model.ResponseModel;
+import com.example.tokosahabat.model.keranjang.Keranjang;
 import com.example.tokosahabat.model.login.Login;
 import com.example.tokosahabat.model.register.Register;
 
@@ -9,6 +11,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface APIRequestData {
     @FormUrlEncoded
@@ -48,6 +51,15 @@ public interface APIRequestData {
     @GET("retrieve.php")
     Call<ResponseModel> ardRertrieveData();
 
+//    @GET("retrieve_keranjang.php")
+//    Call<Cart> ardRertrieveKeranjangData();
+
+    @FormUrlEncoded
+    @POST("retrieve_keranjang.php")
+    Call<Cart> ardRertrieveKeranjangData(
+          @Field("id_user") int id_user
+    );
+
     @FormUrlEncoded
     @POST("delete.php")
     Call<ResponseModel> ardDeleteData(
@@ -81,5 +93,15 @@ public interface APIRequestData {
             @Field("satuan") String satuan,
             @Field("harga_pokok") String harga_pokok,
             @Field("harga_level") String harga_level
+    );
+
+    @FormUrlEncoded
+    @POST("keranjang.php")
+    Call<Keranjang> ardKeranjangData(
+            @Field("id_user") int id_user,
+            @Field("id_item") int id_item,
+            @Field("gambar_item") String gambar_item,
+            @Field("nama_item") String nama_item,
+            @Field("harga_pokok") String harga_pokok
     );
 }

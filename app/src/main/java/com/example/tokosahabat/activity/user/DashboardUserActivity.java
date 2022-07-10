@@ -14,7 +14,6 @@ import com.example.tokosahabat.R;
 import com.example.tokosahabat.SessionManager;
 import com.example.tokosahabat.activity.SignInActivity;
 import com.example.tokosahabat.databinding.ActivityDashboardUserBinding;
-import com.example.tokosahabat.fragment.user.CartUserFragment;
 import com.example.tokosahabat.fragment.user.HomeUserFragment;
 import com.example.tokosahabat.fragment.user.ProfileUserFragment;
 import com.example.tokosahabat.fragment.user.SearchUserFragment;
@@ -48,9 +47,6 @@ public class DashboardUserActivity extends AppCompatActivity {
                     break;
                 case R.id.search:
                     replaceFragment(new SearchUserFragment());
-                    break;
-                case R.id.cart:
-                    replaceFragment(new CartUserFragment());
                     break;
                 case R.id.profile:
                     replaceFragment(new ProfileUserFragment());

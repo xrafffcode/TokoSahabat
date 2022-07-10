@@ -7,20 +7,27 @@
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/drawable/ic_add.xml" value="0.184" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_add_data_admin.xml" value="0.3263157894736842" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_akun_user.xml" value="0.176" />
+        <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_cart.xml" value="0.20989583333333334" />
+        <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_checkout_user.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_dashboard_admin.xml" value="0.19157608695652173" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_dashboard_user.xml" value="0.15353260869565216" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_detail_user.xml" value="0.264" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_edit_product.xml" value="0.2" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_main.xml" value="0.19157608695652173" />
+        <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_my_cart_list_order.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/activity_sign_up_user.xml" value="0.264" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/content_dashboard_admin.xml" value="0.15416666666666667" />
+        <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/fragment_cart_user.xml" value="0.22552083333333334" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/fragment_home.xml" value="0.19202898550724637" />
-        <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/fragment_home_user.xml" value="0.264" />
+        <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/fragment_home_user.xml" value="0.16799999999999998" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/fragment_profile_user.xml" value="0.4" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/item_rv_admin.xml" value="0.15625" />
+        <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/item_rv_detail_order_admin.xml" value="0.22644927536231885" />
+        <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/item_rv_detail_pengiriman.xml" value="0.22780797101449277" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/item_rv_list_order_admin.xml" value="0.152" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/layout/item_rv_user.xml" value="0.264" />
+        <entry key="..\:/Project/TokoSahabat/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20989583333333334" />
         <entry key="..\:/Project/TokoSahabat/app/src/main/res/xml/network_security_config.xml" value="0.1334853090172239" />
         <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/drawable/bg_btn_accept.xml" value="0.175" />
         <entry key="..\:/project android studio/TokoSahabat/app/src/main/res/drawable/bg_btn_add_admin.xml" value="0.175" />

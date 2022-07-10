@@ -97,7 +97,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         rvData = view.findViewById(R.id.recyclerView_Admin);
         pbData = view.findViewById(R.id.pb_admin);
         srlData = view.findViewById(R.id.srl_data);
-        btnAdd = view.findViewById(R.id.btn_add_product);
+        btnAdd = view.findViewById(R.id.btn_cart);
 
         lmData = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         rvData.setLayoutManager(lmData);retrieveData();

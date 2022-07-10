@@ -37,9 +37,6 @@ public class DashboardAdminActivity extends AppCompatActivity {
                 case R.id.search:
                     replaceFragment(new SearchFragment());
                     break;
-                case R.id.cart:
-                    replaceFragment(new CartFragment());
-                    break;
                 case R.id.profile:
                     replaceFragment(new ProfileFragment());
                     break;

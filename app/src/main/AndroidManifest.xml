@@ -2,19 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tokosahabat">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TokoSahabat">
+        android:theme="@style/Theme.TokoSahabat"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.user.CartActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.user.SuccessActivity"
             android:exported="false" />
@@ -29,9 +30,6 @@
             android:exported="false" />
         <activity
             android:name=".activity.user.AkunUserActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.user.MyCartListOrderActivity"
             android:exported="false" />
         <activity
             android:name=".activity.user.DetailUserActivity"
@@ -62,21 +60,19 @@
             android:exported="false" />
         <activity
             android:name=".activity.SplashActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".activity.user.SignUpUserActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".activity.LogInAdminActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".activity.SignInActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

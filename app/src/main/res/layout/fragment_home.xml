@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/search_product" />
 
     <ImageButton
-        android:id="@+id/btn_add_product"
+        android:id="@+id/btn_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"

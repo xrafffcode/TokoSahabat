@@ -24,9 +24,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_my_cart_list"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         android:layout_marginTop="@dimen/spacing_regular"
-        android:layout_marginEnd="@dimen/spacing_large"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tv_my_cart_list"
         app:layout_constraintTop_toBottomOf="@+id/tv_my_cart_list"
@@ -99,7 +99,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/spacing_huge"
         android:layout_marginEnd="@dimen/spacing_huge"
-        android:layout_marginBottom="@dimen/spacing_huge"
         android:background="@drawable/bg_btn_signin"
         android:fontFamily="@font/monsemibold"
         android:text="@string/text_checkout"
@@ -108,5 +107,6 @@
         android:textSize="@dimen/font_large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
 </androidx.constraintlayout.widget.ConstraintLayout>
