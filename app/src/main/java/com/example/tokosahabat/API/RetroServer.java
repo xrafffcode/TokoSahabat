@@ -7,7 +7,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroServer {
-    private static final String baseURL = "http://192.168.193.248/toko-sahabat/";
+    private static final String baseURL = "https://tokosahabat.xyz/";
     private static Retrofit retro;
 
 

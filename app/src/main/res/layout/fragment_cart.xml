@@ -53,14 +53,16 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_all_order"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/spacing_large"
-        android:layout_marginTop="@dimen/spacing_regular"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="@dimen/spacing_large"
-        app:layout_constraintTop_toBottomOf="@id/tv_all_product"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_all_product"
         tools:itemCount="4"
-        tools:listitem="@layout/item_rv_list_order_admin"/>
+        tools:listitem="@layout/item_rv_list_order_admin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

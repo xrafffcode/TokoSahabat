@@ -5,8 +5,17 @@ import android.os.Parcelable;
 import java.io.Serializable;
 
 public class MyCartListModel implements Serializable {
-        private int id_item, id_keranjang;
+        private int id_item, id_keranjang, id_user;
         private String nama_item, gambar_item, harga_pokok;
+
+        public int getId_user() {
+            return id_user;
+        }
+
+        public void setId_user(int id_user) {
+            this.id_user = id_user;
+        }
+
 
         public int getId_keranjang() {
             return id_keranjang;

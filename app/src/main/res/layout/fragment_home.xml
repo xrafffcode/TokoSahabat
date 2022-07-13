@@ -66,6 +66,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
 
+    <ImageButton
+        android:id="@+id/btn_orderan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_btn_add_admin"
+        android:contentDescription="@string/cd_image_button"
+        android:src="@drawable/ic_cart"
+        android:translationZ="1dp"
+        app:elevation="6dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/srl_data"
         android:layout_width="0dp"
@@ -100,5 +116,15 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/iv_kosong_admin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/data_kosong"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

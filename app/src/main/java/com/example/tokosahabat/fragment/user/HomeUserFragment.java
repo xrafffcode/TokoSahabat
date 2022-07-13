@@ -8,11 +8,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -20,9 +20,9 @@ import com.example.tokosahabat.API.APIRequestData;
 import com.example.tokosahabat.API.RetroServer;
 import com.example.tokosahabat.R;
 import com.example.tokosahabat.SessionManager;
+import com.example.tokosahabat.activity.SearchActivity;
 import com.example.tokosahabat.activity.user.CartActivity;
 import com.example.tokosahabat.adapter.AdapterData;
-import com.example.tokosahabat.adapter.MyCartListAdapter;
 import com.example.tokosahabat.model.Cart;
 import com.example.tokosahabat.model.DataModel;
 import com.example.tokosahabat.model.MyCartListModel;
@@ -60,6 +60,8 @@ public class HomeUserFragment extends Fragment {
     private ProgressBar pbData;
     private SearchView svData;
     private ImageButton btnCart;
+    private ImageView ivKosong;
+    private String nama_item;
     private int id_user;
     private List<MyCartListModel> listProduk = new ArrayList<>();
     SessionManager sessionManager;
@@ -104,11 +106,25 @@ public class HomeUserFragment extends Fragment {
 
         rvData = view.findViewById(R.id.recyclerView_User);
         pbData = view.findViewById(R.id.pb_data);
-        svData = view.findViewById(R.id.search_product);
-        btnCart = view.findViewById(R.id.btn_cart);
 
+        btnCart = view.findViewById(R.id.btn_cart);
+        ivKosong = view.findViewById(R.id.iv_kosong);
+        svData = view.findViewById(R.id.search_product_user);
         rvCart = view.findViewById(R.id.rv_my_cart_list);
 
+        svData.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                nama_item = query;
+                searchData();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
 
 
         btnCart.setOnClickListener(new View.OnClickListener() {
@@ -121,9 +137,35 @@ public class HomeUserFragment extends Fragment {
         lmData = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         rvData.setLayoutManager(lmData);retrieveData();
 
-        SetupSearchView();
+//        SetupSearchView();
 
         return view;
+    }
+
+    private void searchData() {
+        APIRequestData ardData = RetroServer.konekRetrofit().create(APIRequestData.class);
+        Call<ResponseModel> SearchData = ardData.ardCariProdukData(nama_item);
+
+        SearchData.enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                int kode = response.body().getKode();
+                String pesan = response.body().getPesan();
+                listData = response.body().getData();
+                if (kode == 1) {
+                    Intent cari = new Intent(getActivity(), SearchActivity.class);
+                    cari.putExtra("listData", (Serializable) listData);
+                    startActivity(cari);
+                } else {
+                    Toast.makeText(getActivity(), pesan, Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void cartData() {
@@ -145,6 +187,7 @@ public class HomeUserFragment extends Fragment {
                 if (kode == 1) {
                     Intent intent = new Intent(getActivity(), CartActivity.class);
                     intent.putExtra("listProduk", (Serializable) listProduk);
+                    intent.putExtra("id_user", id_user);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getActivity(), pesan, Toast.LENGTH_SHORT).show();
@@ -158,20 +201,20 @@ public class HomeUserFragment extends Fragment {
         });
     }
 
-    private void SetupSearchView() {
-        final SearchView searchView = svData;
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
-    }
+//    private void SetupSearchView() {
+//        final SearchView searchView = svData;
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                return false;
+//            }
+//        });
+//    }
 
     @Override
     public void onResume() {
@@ -200,8 +243,9 @@ public class HomeUserFragment extends Fragment {
 
                     pbData.setVisibility(View.INVISIBLE);
                 } else {
+                    ivKosong.setVisibility(View.VISIBLE);
                     pbData.setVisibility(View.GONE);
-                    Toast.makeText(getActivity(), pesan, Toast.LENGTH_SHORT).show();
+
                 }
             }
 

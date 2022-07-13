@@ -24,14 +24,14 @@
         android:layout_marginStart="@dimen/spacing_huge"
         android:layout_marginTop="@dimen/spacing_giant"
         android:fontFamily="@font/monreguler"
-        android:text="@string/text_email"
+        android:text="Username"
         android:textColor="@color/color_black1"
         android:textSize="@dimen/font_large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_toko_sahabat" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edt_email"
+        android:id="@+id/edt_email_admin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_normal_quarter"
@@ -52,29 +52,25 @@
         android:text="@string/text_password"
         android:textColor="@color/color_black1"
         android:textSize="@dimen/font_large"
-        app:layout_constraintStart_toStartOf="@+id/edt_email"
-        app:layout_constraintTop_toBottomOf="@+id/edt_email" />
+        app:layout_constraintStart_toStartOf="@+id/edt_email_admin"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_admin" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edt_password"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edt_password_admin"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_normal_quarter"
         android:layout_marginEnd="@dimen/spacing_huge_slight"
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_edittext_signin"
+        android:fontFamily="@font/monreguler"
+        android:paddingStart="@dimen/spacing_small"
         app:layout_constraintStart_toStartOf="@id/tv_password"
-        app:layout_constraintTop_toBottomOf="@id/tv_password"
-        app:passwordToggleEnabled="true">
+        app:layout_constraintTop_toBottomOf="@id/tv_password">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_edittext_signin"
-            android:fontFamily="@font/monreguler"
-            android:inputType="textPassword"
-            android:paddingStart="@dimen/spacing_small" />
-    </com.google.android.material.textfield.TextInputLayout>
+
+    </com.google.android.material.textfield.TextInputEditText>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login_admin"
@@ -87,8 +83,8 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/font_large"
-        app:layout_constraintEnd_toEndOf="@+id/edt_password"
-        app:layout_constraintStart_toStartOf="@+id/edt_password"
-        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+        app:layout_constraintEnd_toEndOf="@+id/edt_password_admin"
+        app:layout_constraintStart_toStartOf="@+id/edt_password_admin"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password_admin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,9 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/spacing_regular"
-    android:layout_marginEnd="@dimen/spacing_regular"
     android:background="@drawable/bg_rv_admin">
 
+
+    <TextView
+        android:id="@+id/tv_id_user_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="id item"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ib_delivered"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv_id"
@@ -49,13 +59,15 @@
         app:layout_constraintStart_toStartOf="@+id/tv_name_user"
         app:layout_constraintTop_toBottomOf="@+id/tv_name_user" />
 
-    <ImageButton
+
+    <Button
         android:id="@+id/ib_delivered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:background="@color/color_transparent"
-        android:src="@drawable/ic_btn_delivered"
+        android:text="Button"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/red_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

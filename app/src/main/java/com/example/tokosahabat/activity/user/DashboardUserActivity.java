@@ -45,9 +45,6 @@ public class DashboardUserActivity extends AppCompatActivity {
                 case R.id.home:
                     replaceFragment(new HomeUserFragment());
                     break;
-                case R.id.search:
-                    replaceFragment(new SearchUserFragment());
-                    break;
                 case R.id.profile:
                     replaceFragment(new ProfileUserFragment());
                     break;

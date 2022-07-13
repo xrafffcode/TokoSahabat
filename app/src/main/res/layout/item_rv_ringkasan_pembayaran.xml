@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/spacing_regular"
-    android:layout_marginEnd="@dimen/spacing_regular"
     android:background="@drawable/bg_rv_admin">
 
 

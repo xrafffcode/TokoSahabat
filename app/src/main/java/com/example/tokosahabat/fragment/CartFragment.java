@@ -71,23 +71,7 @@ public class CartFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view =  inflater.inflate(R.layout.fragment_cart, container, false);
-        recyclerView = view.findViewById(R.id.rv_all_order);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        orderholder = new ArrayList<>();
 
-        AllOrderModel ob1 = new AllOrderModel(R.drawable.ic_btn_delivered, "331100", "Indah", "07.00");
-        orderholder.add(ob1);
-
-        AllOrderModel ob2 = new AllOrderModel(R.drawable.ic_btn_delivered, "332010", "Cahyani", "10.00");
-        orderholder.add(ob2);
-
-        AllOrderModel ob3 = new AllOrderModel(R.drawable.ic_btn_delivered, "334214", "Musyafa", "13.000");
-        orderholder.add(ob3);
-
-        AllOrderModel ob4 = new AllOrderModel(R.drawable.ic_btn_delivered, "3331211", "Fadila", "17.15");
-        orderholder.add(ob4);
-
-        recyclerView.setAdapter(new AllOrderAdapter(orderholder));
 
         return view;
     }

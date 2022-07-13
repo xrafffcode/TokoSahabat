@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import com.example.tokosahabat.API.APIRequestData;
 import com.example.tokosahabat.API.RetroServer;
 import com.example.tokosahabat.R;
 import com.example.tokosahabat.activity.AddDataAdminActivity;
+import com.example.tokosahabat.activity.user.OrderanActivity;
 import com.example.tokosahabat.adapter.AdapterDataAdmin;
 import com.example.tokosahabat.model.DataModel;
 import com.example.tokosahabat.model.ResponseModel;
@@ -54,8 +56,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public List<DataModel> listData = new ArrayList<>();
     public ProgressBar pbData;
     public SearchView svData;
-    public ImageButton btnAdd;
+    public ImageButton btnAdd, btnOrderan;
     public SwipeRefreshLayout srlData;
+    public ImageView ivEmpty;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -98,6 +101,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         pbData = view.findViewById(R.id.pb_admin);
         srlData = view.findViewById(R.id.srl_data);
         btnAdd = view.findViewById(R.id.btn_cart);
+        ivEmpty = view.findViewById(R.id.iv_kosong_admin);
+        btnOrderan = view.findViewById(R.id.btn_orderan);
 
         lmData = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         rvData.setLayoutManager(lmData);retrieveData();
@@ -110,6 +115,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 srlData.setRefreshing(true);
                 retrieveData();
                 srlData.setRefreshing(false);
+            }
+        });
+
+        btnOrderan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), OrderanActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -138,11 +151,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                 listData = response.body().getData();
 
-                adData = new AdapterDataAdmin(getContext(), listData);
-                rvData.setAdapter(adData);
-                adData.notifyDataSetChanged();
+                if (kode == 1) {
+                    adData = new AdapterDataAdmin(getContext(), listData);
+                    rvData.setAdapter(adData);
+                    adData.notifyDataSetChanged();
 
-                pbData.setVisibility(View.INVISIBLE);
+                    pbData.setVisibility(View.INVISIBLE);
+                } else {
+                    ivEmpty.setVisibility(View.VISIBLE);
+                    pbData.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override

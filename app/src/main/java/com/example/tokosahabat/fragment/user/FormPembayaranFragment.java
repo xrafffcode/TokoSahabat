@@ -85,14 +85,6 @@ public class FormPembayaranFragment extends Fragment {
            }
        });
 
-        recyclerView= view.findViewById(R.id.rv_form_pembayaran);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        pembayaranholder = new ArrayList<>();
-        FormPembayaranModel ob1 = new FormPembayaranModel("Ringkasan Pembayaran", "Total Tagihan", "Biaya Layanan", "Rp. 14,100,-", "Rp. 2,000,-");
-        pembayaranholder.add(ob1);
-
-        recyclerView.setAdapter(new FormPembayaranAdapter(pembayaranholder));
 
 
        return view;

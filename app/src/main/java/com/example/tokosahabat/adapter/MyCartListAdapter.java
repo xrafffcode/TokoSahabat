@@ -15,13 +15,21 @@ import com.example.tokosahabat.R;
 import com.example.tokosahabat.model.DataModel;
 import com.example.tokosahabat.model.MyCartListModel;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MyCartListAdapter extends RecyclerView.Adapter<MyCartListAdapter.mycartviewholder> {
     private Context ctx;
     private List<MyCartListModel> listProduk;
     private int id_user;
+
+    private String formatRupiah(Double number){
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        return formatRupiah.format(number);
+    }
 
     public MyCartListAdapter(Context ctx, List<MyCartListModel> listProduk) {
         this.ctx = ctx;
@@ -41,7 +49,7 @@ public class MyCartListAdapter extends RecyclerView.Adapter<MyCartListAdapter.my
         MyCartListModel dm = listProduk.get(position);
 
         holder.name.setText(dm.getNama_item());
-        holder.price.setText(dm.getHarga_pokok());
+        holder.price.setText(formatRupiah(Double.parseDouble(dm.getHarga_pokok())));
         Glide.with(ctx)
                 .load(listProduk.get(position).getGambar_item())
                 .into(holder.img);

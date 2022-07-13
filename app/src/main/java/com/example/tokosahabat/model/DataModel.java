@@ -1,6 +1,8 @@
 package com.example.tokosahabat.model;
 
-public class DataModel {
+import java.io.Serializable;
+
+public class DataModel implements Serializable {
     private int id_item;
     private String kode_item, barcode, nama_item, gambar_item, stok_item, jenis_item, konversi, tipe_item, satuan, harga_pokok, harga_level;
 

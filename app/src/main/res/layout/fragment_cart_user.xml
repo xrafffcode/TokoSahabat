@@ -54,7 +54,7 @@
         android:textColor="@color/color_black1"
         android:textSize="@dimen/font_regular"
         app:layout_constraintBottom_toBottomOf="@+id/tv_subtotal"
-        app:layout_constraintEnd_toEndOf="@+id/rv_my_cart_list"
+        app:layout_constraintEnd_toEndOf="@+id/materialDivider"
         app:layout_constraintTop_toTopOf="@+id/tv_subtotal" />
 
     <com.google.android.material.divider.MaterialDivider
