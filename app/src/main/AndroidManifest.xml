@@ -14,6 +14,9 @@
         android:theme="@style/Theme.TokoSahabat"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.user.PilihanPembayaranActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.user.OrderanActivity"
             android:exported="false" />
         <activity

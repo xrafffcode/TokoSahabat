@@ -26,6 +26,7 @@
     <dimen name="spacing_huge_slight">48dp</dimen>
     <dimen name="spacing_huge">40dp</dimen>
     <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_large_med">32dp</dimen>
     <dimen name="spacing_regular">16dp</dimen>
     <dimen name="spacing_normal_quarter">12dp</dimen>
     <dimen name="spacing_small">10dp</dimen>
