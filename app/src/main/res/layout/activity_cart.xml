@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.user.CartActivity">
+
+    <TextView
+        android:id="@+id/tv_my_cart_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_huge"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:fontFamily="@font/monreguler"
+        android:text="@string/text_my_cart_list"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_large_med"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_my_cart_list"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="@dimen/spacing_regular"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_my_cart_list"
+        app:layout_constraintTop_toBottomOf="@+id/tv_my_cart_list"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_rv_detail_order_admin" />
+
+    <TextView
+        android:id="@+id/tv_subtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_huge_slight"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/text_subtotal"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_large"
+        app:layout_constraintStart_toStartOf="@+id/rv_my_cart_list"
+        app:layout_constraintTop_toBottomOf="@+id/rv_my_cart_list" />
+
+    <TextView
+        android:id="@+id/tv_rp_subtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/text_harga"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_subtotal"
+        app:layout_constraintEnd_toEndOf="@+id/rv_my_cart_list"
+        app:layout_constraintTop_toTopOf="@+id/tv_subtotal" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_large"
+        app:dividerColor="@color/color_black1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtotal" />
+
+    <TextView
+        android:id="@+id/tv_total_subtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/text_total"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_large"
+        app:layout_constraintStart_toStartOf="@+id/materialDivider"
+        app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
+
+    <TextView
+        android:id="@+id/tv_rp_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/text_harga"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_total_subtotal"
+        app:layout_constraintEnd_toEndOf="@+id/materialDivider"
+        app:layout_constraintTop_toTopOf="@+id/tv_total_subtotal" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_checkout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_huge"
+        android:layout_marginEnd="@dimen/spacing_huge"
+        android:background="@drawable/bg_btn_signin"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/text_checkout"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
