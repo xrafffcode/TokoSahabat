@@ -76,7 +76,7 @@ public class FormPembayaranFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_form_pembayaran, container, false);
-       Button btnBayar = (Button) view.findViewById(R.id.btn_bayar);
+       Button btnBayar = (Button) view.findViewById(R.id.btn_selesai);
        btnBayar.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {

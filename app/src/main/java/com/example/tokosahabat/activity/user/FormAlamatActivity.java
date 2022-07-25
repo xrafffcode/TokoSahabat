@@ -63,7 +63,7 @@ public class FormAlamatActivity extends AppCompatActivity {
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FormAlamatActivity.this, FormPembayaranActivity.class);
+                Intent intent = new Intent(FormAlamatActivity.this, PilihanPembayaranActivity.class);
                 intent.putExtra("total_harga", total_harga);
                 startActivity(intent);
             }

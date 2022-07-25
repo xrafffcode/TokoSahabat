@@ -41,105 +41,109 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/tv_pembayaran"
+        android:id="@+id/tv_transfer_pembayaran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_large"
         android:layout_marginTop="@dimen/spacing_larger"
         android:fontFamily="@font/monsemibold"
-        android:text="@string/text_pembayaran"
+        android:text="@string/transfer_pembayaran_ke_nomor_rekening"
         android:textColor="@color/color_black1"
-        android:textSize="@dimen/font_title_content"
+        android:textSize="@dimen/font_large"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/actionbar_pembayaran" />
 
-    <ImageButton
-        android:id="@+id/ib_circle"
+    <ImageView
+        android:id="@+id/iv_mandiri"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_regular"
-        android:background="@color/color_transparent"
-        android:contentDescription="@string/cd_image_button"
-        android:src="@drawable/radiobutton"
-        app:layout_constraintStart_toStartOf="@+id/tv_pembayaran"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pembayaran" />
+        android:layout_marginTop="@dimen/spacing_large"
+        android:src="@drawable/mandiri"
+        app:layout_constraintEnd_toEndOf="@+id/tv_transfer_pembayaran"
+        app:layout_constraintStart_toStartOf="@+id/tv_transfer_pembayaran"
+        app:layout_constraintTop_toBottomOf="@+id/tv_transfer_pembayaran" />
 
     <TextView
-        android:id="@+id/tv_pembayaran_cod"
+        android:id="@+id/tv_no_rekening"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_regular"
-        android:fontFamily="@font/monsemibold"
-        android:text="@string/text_pembayaran_cod"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:fontFamily="@font/monbold"
+        android:text="1800011004389"
         android:textColor="@color/color_black1"
-        android:textSize="@dimen/font_large"
-        app:layout_constraintBottom_toBottomOf="@+id/ib_circle"
-        app:layout_constraintStart_toEndOf="@+id/ib_circle"
-        app:layout_constraintTop_toTopOf="@+id/ib_circle" />
+        android:textSize="@dimen/font_title_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_mandiri" />
 
-    <ImageButton
-        android:id="@+id/btn_union"
+    <TextView
+        android:id="@+id/tv_toko_sahabat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_normal_quarter"
-        android:background="@color/color_transparent"
-        android:src="@drawable/union"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_pembayaran_cod"
-        app:layout_constraintStart_toEndOf="@+id/tv_pembayaran_cod"
-        app:layout_constraintTop_toTopOf="@+id/tv_pembayaran_cod" />
+        android:layout_marginTop="@dimen/spacing_smaller"
+        android:fontFamily="@font/monmed"
+        android:text="@string/a_n_toko_sahabat"
+        android:textColor="@color/color_black1"
+        android:textSize="@dimen/font_small"
+        app:layout_constraintEnd_toEndOf="@+id/tv_no_rekening"
+        app:layout_constraintStart_toStartOf="@+id/tv_no_rekening"
+        app:layout_constraintTop_toBottomOf="@+id/tv_no_rekening" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_form_pembayaran"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_giant"
-        android:layout_marginEnd="@dimen/spacing_huge"
+        android:layout_marginStart="@dimen/spacing_large_med"
+        android:layout_marginTop="@dimen/spacing_normal_quarter"
+        android:layout_marginEnd="@dimen/spacing_large_med"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/ib_circle"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pembayaran_cod"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_toko_sahabat"
         tools:itemCount="1"
         tools:listitem="@layout/item_rv_ringkasan_pembayaran" />
 
-    <TextView
-        android:id="@+id/tv_total_bayar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/spacing_small"
-        android:fontFamily="@font/monsemibold"
-        android:text="@string/text_total_bayar"
-        android:textColor="@color/color_black1"
-        android:textSize="@dimen/font_large"
-        app:layout_constraintBottom_toTopOf="@+id/tv_harga_pembayaran"
-        app:layout_constraintStart_toStartOf="@+id/rv_form_pembayaran" />
-
-    <TextView
-        android:id="@+id/tv_harga_pembayaran"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/spacing_huge"
-        android:fontFamily="@font/monsemibold"
-        android:text="@string/text_harga"
-        android:textColor="@color/red_700"
-        android:textSize="@dimen/font_title_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tv_total_bayar" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_bayar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_pesan_konfirmasi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_larger"
+        android:layout_marginStart="@dimen/spacing_large_med"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_large_med"
+        android:background="@drawable/bg_form_pembayaran"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_form_pembayaran">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large_med"
+            android:layout_marginBottom="@dimen/spacing_large_med"
+            android:fontFamily="@font/monmed"
+            android:text="@string/konfirmasi_bukti_pembayaran_ke_nomor_whatsapp_0813911234567_agar_pesanan_dapat_segera_diproses"
+            android:textColor="@color/color_black1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_selesai"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_huge"
         android:layout_marginEnd="@dimen/spacing_huge"
+        android:layout_marginBottom="@dimen/spacing_huge"
         android:background="@drawable/bg_btn_signin"
         android:fontFamily="@font/monsemibold"
-        android:text="@string/text_bayar"
+        android:text="@string/text_selesai"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/font_large"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_harga_pembayaran"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_total_bayar"
-        app:layout_constraintTop_toTopOf="@+id/tv_total_bayar" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
