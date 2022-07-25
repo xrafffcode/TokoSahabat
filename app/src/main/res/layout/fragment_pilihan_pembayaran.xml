@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.user.PilihanPembayaranFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/actionbar_pembayaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back_pembayaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/color_transparent"
+            android:contentDescription="@string/cd_image_button"
+            android:padding="@dimen/spacing_normal_quarter"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/monsemibold"
+            android:text="@string/text_pembayaran"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_back_pembayaran"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_pembayaran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_title_content"
+        android:layout_marginStart="@dimen/spacing_large_med"
+        android:layout_marginTop="@dimen/spacing_large_med"
+        android:fontFamily="@font/monsemibold"
+        android:textColor="@color/color_black1"
+        android:text="@string/text_pembayaran"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actionbar_pembayaran" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_transfer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_large_med"
+        android:layout_marginEnd="@dimen/spacing_large_med"
+        android:background="@drawable/bg_btn_signin"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/transfer_ke_rekening_bank"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large"
+        android:layout_marginTop="@dimen/spacing_large"
+        app:layout_constraintTop_toBottomOf="@id/tv_pembayaran"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_cod"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_large_med"
+        android:layout_marginEnd="@dimen/spacing_large_med"
+        android:background="@drawable/bg_btn_signin"
+        android:fontFamily="@font/monsemibold"
+        android:text="@string/text_pembayaran_cod"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large"
+        android:layout_marginTop="@dimen/spacing_large"
+        app:layout_constraintTop_toBottomOf="@id/btn_transfer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
