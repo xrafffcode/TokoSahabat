@@ -4,29 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.RecoverySystem;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.tokosahabat.R;
+import com.example.tokosahabat.activity.user.FormPembayaranActivity;
 import com.example.tokosahabat.activity.user.SuccessActivity;
-import com.example.tokosahabat.adapter.FormPembayaranAdapter;
-import com.example.tokosahabat.model.FormAlamatModel;
-import com.example.tokosahabat.model.FormPembayaranModel;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FormPembayaranFragment#newInstance} factory method to
+ * Use the {@link PilihanPembayaranFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FormPembayaranFragment extends Fragment {
+public class PilihanPembayaranFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,10 +30,7 @@ public class FormPembayaranFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    RecyclerView recyclerView;
-    ArrayList<FormPembayaranModel> pembayaranholder;
-
-    public FormPembayaranFragment() {
+    public PilihanPembayaranFragment() {
         // Required empty public constructor
     }
 
@@ -50,11 +40,11 @@ public class FormPembayaranFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FormPembayaranFragment.
+     * @return A new instance of fragment PilihanPembayaranFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FormPembayaranFragment newInstance(String param1, String param2) {
-        FormPembayaranFragment fragment = new FormPembayaranFragment();
+    public static PilihanPembayaranFragment newInstance(String param1, String param2) {
+        PilihanPembayaranFragment fragment = new PilihanPembayaranFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -75,18 +65,28 @@ public class FormPembayaranFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment_form_pembayaran, container, false);
-       Button btnBayar = (Button) view.findViewById(R.id.btn_selesai);
-       btnBayar.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent intent = new Intent(getActivity(), SuccessActivity.class);
-               startActivity(intent);
-           }
-       });
+        View view = inflater.inflate(R.layout.fragment_pilihan_pembayaran, container, false);
+        Button btnTransfer = (Button) view.findViewById(R.id.btn_transfer);
+        btnTransfer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), FormPembayaranActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+
+        Button btnCod = (Button) view.findViewById(R.id.btn_cod);
+        btnCod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SuccessActivity.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
 
 
-
-       return view;
+        return view;
     }
 }

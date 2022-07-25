@@ -46,7 +46,6 @@ public class FormPembayaranActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_form_pembayaran);
 
-        harga_pembayaran = findViewById(R.id.tv_harga_pembayaran);
         Intent terima = getIntent();
         total_harga = terima.getStringExtra("total_harga");
         harga_pembayaran.setText(total_harga);
@@ -63,7 +62,7 @@ public class FormPembayaranActivity extends AppCompatActivity {
 
         rvPay.setAdapter(new FormPembayaranAdapter(pembayaranholder));
 
-        btnBayar = findViewById(R.id.btn_bayar);
+        btnBayar = findViewById(R.id.btn_selesai);
         btnBayar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

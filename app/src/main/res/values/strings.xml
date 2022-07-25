@@ -92,6 +92,13 @@
     <string name="text_desc_pesanan">Siapkan uang tunai dan bayar lewat kurir saat menerima barang.</string>
     <string name="text_selesai">Selesai</string>
 
+    //pembayaran transfer
+    <string name="transfer_pembayaran_ke_nomor_rekening">Transfer Pembayaran \n ke Nomor Rekening:</string>
+    <string name="a_n_toko_sahabat">a.n. Toko Sahabat</string>
+    <string name="transfer_ke_rekening_bank">Transfer ke Rekening Bank</string>
+    <string name="konfirmasi_bukti_pembayaran_ke_nomor_whatsapp_0813911234567_agar_pesanan_dapat_segera_diproses">*Konfirmasi Bukti Pembayaran ke \n Nomor WhatsApp <b>0813911234567</b> \n agar pesanan dapat segera diproses</string>
+    <string name="mandiri">Mandiri</string>
+
 
     //content description
     <string name="cd_image">image</string>
